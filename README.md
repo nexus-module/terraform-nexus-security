@@ -1,6 +1,6 @@
 # Nexus Security
 
-This module allows you to create **Nexus Security as a global resource** and **individual Nexus Security resources.** For individual examples, see the usage snippets and [examples](https://github.com/devops-ia/terraform-nexus-security/tree/main/examples).
+This module allows you to create **Nexus Security as a global resource** and **individual Nexus Security resources.** For individual examples, see the usage snippets and [examples](https://github.com/nexus-module/terraform-nexus-security/tree/main/examples).
 
 ## Provider
 You need use a [Nexus provider](https://registry.terraform.io/providers/datadrivers/nexus/latest/docs).
@@ -19,7 +19,7 @@ provider "nexus" {
 
 ```hcl
 module "nexus_security" {
-  source  = "devops-ia/security/nexus"
+  source  = "nexus-module/security/nexus"
 
  nexus_security_anonymous = [
     {
@@ -117,7 +117,7 @@ module "nexus_security" {
 
 ```hcl
 module "nexus_security_anonymous" {
-  source  = "devops-ia/security/nexus//modules/nexus-security-anonymous"
+  source  = "nexus-module/security/nexus//modules/nexus-security-anonymous"
 
   enabled    = true
   realm_name = "NexusAuthorizingRealm"
@@ -129,7 +129,7 @@ module "nexus_security_anonymous" {
 
 ```hcl
 module "nexus_security_content_selector" {
-  source  = "devops-ia/security/nexus//modules/nexus-security-content-selector"
+  source  = "nexus-module/security/nexus//modules/nexus-security-content-selector"
 
   name        = "example"
   description = "example content selector"
@@ -141,7 +141,7 @@ module "nexus_security_content_selector" {
 
 ```hcl
 module "nexus_security_ldap" {
-  source  = "devops-ia/security/nexus//modules/nexus-security-ldap"
+  source  = "nexus-module/security/nexus//modules/nexus-security-ldap"
 
   name                           = "example-ldap"
   auth_schema                    = "NONE"
@@ -180,7 +180,7 @@ module "nexus_security_ldap" {
 
 ```hcl
 module "nexus_security_ldap_order" {
-  source  = "devops-ia/security/nexus//modules/nexus-security-ldap-order"
+  source  = "nexus-module/security/nexus//modules/nexus-security-ldap-order"
 
   order = [
     "server1",
@@ -193,7 +193,7 @@ module "nexus_security_ldap_order" {
 
 ```hcl
 module "nexus_privilege_script" {
-  source  = "devops-ia/security/nexus//modules/nexus-security-realms"
+  source  = "nexus-module/security/nexus//modules/nexus-security-realms"
 
   active = [
     "NexusAuthenticatingRealm",
@@ -206,7 +206,7 @@ module "nexus_privilege_script" {
 
 ```hcl
 module "nexus_security_role" {
-  source  = "devops-ia/security/nexus//modules/nexus-security-role"
+  source  = "nexus-module/security/nexus//modules/nexus-security-role"
 
   description = "Docker deployment role"
   name        = "docker-deploy"
@@ -221,7 +221,7 @@ module "nexus_security_role" {
 
 ```hcl
 module "nexus_security_saml" {
-  source  = "devops-ia/security/nexus//modules/nexus-security-saml"
+  source  = "nexus-module/security/nexus//modules/nexus-security-saml"
 
   idp_metadata                 = "<EntityDescriptor ...>...</EntityDescriptor>"
   entity_id                    = "http://nexus.example/service/rest/v1/security/saml/metadata"
@@ -239,7 +239,7 @@ module "nexus_security_saml" {
 
 ```hcl
 module "nexus_security_user" {
-  source  = "devops-ia/security/nexus//modules/nexus-security-user"
+  source  = "nexus-module/security/nexus//modules/nexus-security-user"
 
   userid    = "admin"
   firstname = "Administrator"
@@ -255,7 +255,7 @@ module "nexus_security_user" {
 
 ```hcl
 module "nexus_security_user_token" {
-  source  = "devops-ia/security/nexus//modules/nexus-security-token"
+  source  = "nexus-module/security/nexus//modules/nexus-security-token"
 
   enabled         = true
   protect_content = false
@@ -314,4 +314,4 @@ No resources.
 
 ## Authors
 
-Module is maintained by [DevOps IA](https://github.com/devops-ia) with help from [these awesome contributors](https://github.com/devops-ia/terraform-nexus-security/graphs/contributors).
+Module is maintained by [DevOps IA](https://github.com/devops-ia) with help from [these awesome contributors](https://github.com/nexus-module/terraform-nexus-security/graphs/contributors).
