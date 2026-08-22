@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0](https://github.com/nexus-module/terraform-nexus-security/compare/v1.1.0...v1.2.0) (2026-08-22)
+
+
+### Features
+
+* bump nexus provider to 3.0.0 ([#19](https://github.com/nexus-module/terraform-nexus-security/issues/19)) ([6078561](https://github.com/nexus-module/terraform-nexus-security/commit/6078561fee7396105908ea036780758cc604b054))
+
 ## [1.1.0](https://github.com/nexus-module/terraform-nexus-security/compare/v1.0.0...v1.1.0) (2024-08-07)
 
 
