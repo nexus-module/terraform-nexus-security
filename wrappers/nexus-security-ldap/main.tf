@@ -1,0 +1,36 @@
+module "wrapper" {
+  source = "../../modules/nexus-security-ldap"
+
+  for_each = var.items
+
+  auth_password                  = try(each.value.auth_password, var.defaults.auth_password, "")
+  auth_realm                     = try(each.value.auth_realm, var.defaults.auth_realm, "")
+  auth_schema                    = try(each.value.auth_schema, var.defaults.auth_schema)
+  auth_username                  = try(each.value.auth_username, var.defaults.auth_username)
+  connection_retry_delay_seconds = try(each.value.connection_retry_delay_seconds, var.defaults.connection_retry_delay_seconds)
+  connection_timeout_seconds     = try(each.value.connection_timeout_seconds, var.defaults.connection_timeout_seconds)
+  group_base_dn                  = try(each.value.group_base_dn, var.defaults.group_base_dn, "")
+  group_id_attribute             = try(each.value.group_id_attribute, var.defaults.group_id_attribute, "")
+  group_member_attribute         = try(each.value.group_member_attribute, var.defaults.group_member_attribute, "")
+  group_member_format            = try(each.value.group_member_format, var.defaults.group_member_format, "")
+  group_object_class             = try(each.value.group_object_class, var.defaults.group_object_class, "")
+  group_subtree                  = try(each.value.group_subtree, var.defaults.group_subtree, "")
+  group_type                     = try(each.value.group_type, var.defaults.group_type)
+  host                           = try(each.value.host, var.defaults.host)
+  ldap_groups_as_roles           = try(each.value.ldap_groups_as_roles, var.defaults.ldap_groups_as_roles, false)
+  max_incident_count             = try(each.value.max_incident_count, var.defaults.max_incident_count)
+  name                           = try(each.value.name, var.defaults.name)
+  port                           = try(each.value.port, var.defaults.port)
+  protocol                       = try(each.value.protocol, var.defaults.protocol)
+  search_base                    = try(each.value.search_base, var.defaults.search_base)
+  use_trust_store                = try(each.value.use_trust_store, var.defaults.use_trust_store, false)
+  user_base_dn                   = try(each.value.user_base_dn, var.defaults.user_base_dn, "")
+  user_email_address_attribute   = try(each.value.user_email_address_attribute, var.defaults.user_email_address_attribute, "")
+  user_id_attribute              = try(each.value.user_id_attribute, var.defaults.user_id_attribute, "")
+  user_ldap_filter               = try(each.value.user_ldap_filter, var.defaults.user_ldap_filter, "")
+  user_member_of_attribute       = try(each.value.user_member_of_attribute, var.defaults.user_member_of_attribute, "")
+  user_object_class              = try(each.value.user_object_class, var.defaults.user_object_class, "")
+  user_password_attribute        = try(each.value.user_password_attribute, var.defaults.user_password_attribute, "")
+  user_real_name_attribute       = try(each.value.user_real_name_attribute, var.defaults.user_real_name_attribute, "")
+  user_subtree                   = try(each.value.user_subtree, var.defaults.user_subtree, null)
+}

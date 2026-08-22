@@ -65,6 +65,33 @@ module "nexus_security_ldap" {
 }
 
 ################################################################################
+# Security OIDC
+################################################################################
+module "nexus_security_oidc" {
+  source = "./modules/nexus-security-oidc"
+
+  for_each = { for s in var.nexus_security_oidc : s.client_id => s }
+
+  client_id                   = each.value.client_id
+  client_secret               = each.value.client_secret
+  authorization_url           = each.value.authorization_url
+  token_url                   = each.value.token_url
+  jwks_url                    = each.value.jwks_url
+  jws_algorithm               = each.value.jws_algorithm
+  username_claim              = each.value.username_claim
+  groups_claim                = each.value.groups_claim
+  authorization_custom_params = each.value.authorization_custom_params
+  token_request_custom_params = each.value.token_request_custom_params
+  email_claim                 = each.value.email_claim
+  first_name_claim            = each.value.first_name_claim
+  last_name_claim             = each.value.last_name_claim
+  logout_url                  = each.value.logout_url
+  jwks                        = each.value.jwks
+  exact_match_claims          = each.value.exact_match_claims
+  use_trust_store             = each.value.use_trust_store
+}
+
+################################################################################
 # Security Role
 ################################################################################
 module "nexus_security_role" {
@@ -96,6 +123,17 @@ module "nexus_security_saml" {
   last_name_attribute          = each.value.last_name_attribute
   email_attribute              = each.value.email_attribute
   groups_attribute             = each.value.groups_attribute
+}
+
+################################################################################
+# Security SSL Truststore
+################################################################################
+module "nexus_security_ssl_truststore" {
+  source = "./modules/nexus-security-ssl-truststore"
+
+  for_each = { for s in var.nexus_security_ssl_truststore : s.pem => s }
+
+  pem = each.value.pem
 }
 
 ################################################################################
