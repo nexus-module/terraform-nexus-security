@@ -65,6 +65,33 @@ variable "nexus_security_ldap" {
 }
 
 ################################################################################
+# Security OIDC
+################################################################################
+variable "nexus_security_oidc" {
+  description = "Security OIDC."
+  type = list(object({
+    client_id                   = string
+    client_secret               = string
+    authorization_url           = string
+    token_url                   = string
+    jwks_url                    = string
+    jws_algorithm               = string
+    username_claim              = string
+    groups_claim                = string
+    authorization_custom_params = optional(map(string))
+    token_request_custom_params = optional(map(string))
+    email_claim                 = optional(string)
+    first_name_claim            = optional(string)
+    last_name_claim             = optional(string)
+    logout_url                  = optional(string)
+    jwks                        = optional(string)
+    exact_match_claims          = optional(map(string))
+    use_trust_store             = optional(bool)
+  }))
+  default = []
+}
+
+################################################################################
 # Security Role
 ################################################################################
 variable "nexus_security_role" {
@@ -94,6 +121,17 @@ variable "nexus_security_saml" {
     last_name_attribute          = optional(string)
     validate_assertion_signature = optional(bool)
     validate_response_signature  = optional(bool)
+  }))
+  default = []
+}
+
+################################################################################
+# Security SSL Truststore
+################################################################################
+variable "nexus_security_ssl_truststore" {
+  description = "Security SSL Truststore."
+  type = list(object({
+    pem = string
   }))
   default = []
 }
