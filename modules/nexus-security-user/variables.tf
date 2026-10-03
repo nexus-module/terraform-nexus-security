@@ -17,9 +17,23 @@ variable "lastname" {
 }
 
 variable "password" {
-  description = "The password for the user."
+  description = "The password for the user. Stored in Terraform state; prefer password_wo on Terraform >= 1.11."
   type        = string
+  default     = null
   sensitive   = true
+}
+
+variable "password_wo" {
+  description = "Write-only password for the user, never stored in state. Requires Terraform >= 1.11. Use with password_wo_version."
+  type        = string
+  default     = null
+  sensitive   = true
+}
+
+variable "password_wo_version" {
+  description = "Version tracker for password_wo. Increment it to push a new password_wo value."
+  type        = number
+  default     = null
 }
 
 variable "userid" {
@@ -36,5 +50,5 @@ variable "roles" {
 variable "status" {
   description = "The user's status, e.g. active or disabled."
   type        = string
-  default     = ""
+  default     = null
 }

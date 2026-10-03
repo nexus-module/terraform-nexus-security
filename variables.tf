@@ -48,7 +48,7 @@ variable "nexus_security_ldap" {
     group_member_attribute         = optional(string)
     group_member_format            = optional(string)
     group_object_class             = optional(string)
-    group_subtree                  = optional(string)
+    group_subtree                  = optional(bool)
     ldap_groups_as_roles           = optional(bool)
     use_trust_store                = optional(bool)
     user_base_dn                   = optional(string)
@@ -142,13 +142,15 @@ variable "nexus_security_ssl_truststore" {
 variable "nexus_security_user" {
   description = "Security User."
   type = list(object({
-    email     = string
-    firstname = string
-    lastname  = string
-    password  = string
-    userid    = string
-    roles     = optional(list(string))
-    status    = optional(string)
+    email               = string
+    firstname           = string
+    lastname            = string
+    password            = optional(string)
+    password_wo         = optional(string)
+    password_wo_version = optional(number)
+    userid              = string
+    roles               = optional(list(string))
+    status              = optional(string)
   }))
   default = []
 }

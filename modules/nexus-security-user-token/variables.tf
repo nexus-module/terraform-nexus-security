@@ -11,3 +11,15 @@ variable "protect_content" {
   type        = bool
   default     = null
 }
+
+variable "expiration_enabled" {
+  description = "Whether user tokens expire."
+  type        = bool
+  default     = null
+}
+
+variable "expiration_days" {
+  description = "Number of days user tokens remain valid when expiration is enabled."
+  type        = number
+  default     = null
+}

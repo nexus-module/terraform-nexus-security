@@ -103,6 +103,7 @@ module "nexus_security_role" {
   name        = each.value.name
   privileges  = each.value.privileges
   roleid      = each.value.roleid
+  roles       = each.value.roles
 }
 
 ################################################################################
@@ -144,11 +145,13 @@ module "nexus_security_user" {
 
   for_each = { for s in var.nexus_security_user : s.userid => s }
 
-  userid    = each.value.userid
-  firstname = each.value.firstname
-  lastname  = each.value.lastname
-  email     = each.value.email
-  password  = each.value.password
-  roles     = each.value.roles
-  status    = each.value.status
+  userid              = each.value.userid
+  firstname           = each.value.firstname
+  lastname            = each.value.lastname
+  email               = each.value.email
+  password            = each.value.password
+  password_wo         = each.value.password_wo
+  password_wo_version = each.value.password_wo_version
+  roles               = each.value.roles
+  status              = each.value.status
 }

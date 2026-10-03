@@ -66,14 +66,14 @@ No modules.
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
 | <a name="requirement_nexus"></a> [nexus](#requirement\_nexus) | >= 3.0.0 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="provider_nexus"></a> [nexus](#provider\_nexus) | >= 3.0.0 |
 
 ## Modules
@@ -83,13 +83,13 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [nexus_security_ldap.main](https://registry.terraform.io/providers/datadrivers/nexus/latest/docs/resources/security_ldap) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_auth_password"></a> [auth\_password](#input\_auth\_password) | The password to bind with. Required if authScheme other than none. | `string` | `""` | no |
 | <a name="input_auth_realm"></a> [auth\_realm](#input\_auth\_realm) | The SASL realm to bind to. Required if authScheme is CRAM\_MD5 or DIGEST\_MD5. | `string` | `""` | no |
 | <a name="input_auth_schema"></a> [auth\_schema](#input\_auth\_schema) | Authentication scheme used for connecting to LDAP server. | `string` | n/a | yes |
@@ -101,7 +101,7 @@ No modules.
 | <a name="input_group_member_attribute"></a> [group\_member\_attribute](#input\_group\_member\_attribute) | LDAP attribute containing the usernames for the group. Required if groupType is static. | `string` | `""` | no |
 | <a name="input_group_member_format"></a> [group\_member\_format](#input\_group\_member\_format) | The format of user ID stored in the group member attribute. Required if groupType is static. | `string` | `""` | no |
 | <a name="input_group_object_class"></a> [group\_object\_class](#input\_group\_object\_class) | LDAP class for group objects. Required if groupType is static. | `string` | `""` | no |
-| <a name="input_group_subtree"></a> [group\_subtree](#input\_group\_subtree) | Are groups located in structures below the group base DN. | `string` | `""` | no |
+| <a name="input_group_subtree"></a> [group\_subtree](#input\_group\_subtree) | Are groups located in structures below the group base DN. | `bool` | `null` | no |
 | <a name="input_group_type"></a> [group\_type](#input\_group\_type) | Defines a type of groups used: static (a group contains a list of users) or dynamic (a user contains a list of groups). Required if ldapGroupsAsRoles is true. | `string` | n/a | yes |
 | <a name="input_host"></a> [host](#input\_host) | LDAP server connection hostname. | `string` | n/a | yes |
 | <a name="input_ldap_groups_as_roles"></a> [ldap\_groups\_as\_roles](#input\_ldap\_groups\_as\_roles) | Denotes whether LDAP assigned roles are used as Nexus Repository Manager roles. | `bool` | `false` | no |
@@ -124,6 +124,6 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_name"></a> [name](#output\_name) | The name of the resource. |
 <!-- END_TF_DOCS -->

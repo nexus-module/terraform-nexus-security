@@ -46,14 +46,14 @@ No modules.
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
 | <a name="requirement_nexus"></a> [nexus](#requirement\_nexus) | >= 3.0.0 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="provider_nexus"></a> [nexus](#provider\_nexus) | >= 3.0.0 |
 
 ## Modules
@@ -63,13 +63,13 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [nexus_security_saml.main](https://registry.terraform.io/providers/datadrivers/nexus/latest/docs/resources/security_saml) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_email_attribute"></a> [email\_attribute](#input\_email\_attribute) | IdP field mappings for user's email address. | `string` | `""` | no |
 | <a name="input_entity_id"></a> [entity\_id](#input\_entity\_id) | Entity ID URI. | `string` | `""` | no |
 | <a name="input_first_name_attribute"></a> [first\_name\_attribute](#input\_first\_name\_attribute) | IdP field mappings for user's given name. | `string` | `""` | no |
@@ -83,7 +83,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_idp_metadata"></a> [idp\_metadata](#output\_idp\_metadata) | IDP metadata. |
 | <a name="output_username_attribute"></a> [username\_attribute](#output\_username\_attribute) | Username attribute. |
 <!-- END_TF_DOCS -->

@@ -2,14 +2,14 @@
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
 | <a name="requirement_nexus"></a> [nexus](#requirement\_nexus) | >= 3.0.0 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="provider_nexus"></a> [nexus](#provider\_nexus) | >= 3.0.0 |
 
 ## Modules
@@ -19,13 +19,13 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [nexus_security_oidc.main](https://registry.terraform.io/providers/datadrivers/nexus/latest/docs/resources/security_oidc) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_authorization_custom_params"></a> [authorization\_custom\_params](#input\_authorization\_custom\_params) | Extra query parameters for authorization requests. | `map(string)` | `null` | no |
 | <a name="input_authorization_url"></a> [authorization\_url](#input\_authorization\_url) | Authorization endpoint URL. | `string` | n/a | yes |
 | <a name="input_client_id"></a> [client\_id](#input\_client\_id) | Unique identifier issued by the OpenID Provider. | `string` | n/a | yes |
@@ -47,6 +47,6 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_client_id"></a> [client\_id](#output\_client\_id) | Client id. |
 <!-- END_TF_DOCS -->

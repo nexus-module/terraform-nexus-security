@@ -101,8 +101,8 @@ variable "group_object_class" {
 
 variable "group_subtree" {
   description = "Are groups located in structures below the group base DN."
-  type        = string
-  default     = ""
+  type        = bool
+  default     = null
 }
 
 variable "ldap_groups_as_roles" {

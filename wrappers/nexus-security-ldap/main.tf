@@ -14,7 +14,7 @@ module "wrapper" {
   group_member_attribute         = try(each.value.group_member_attribute, var.defaults.group_member_attribute, "")
   group_member_format            = try(each.value.group_member_format, var.defaults.group_member_format, "")
   group_object_class             = try(each.value.group_object_class, var.defaults.group_object_class, "")
-  group_subtree                  = try(each.value.group_subtree, var.defaults.group_subtree, "")
+  group_subtree                  = try(each.value.group_subtree, var.defaults.group_subtree, null)
   group_type                     = try(each.value.group_type, var.defaults.group_type)
   host                           = try(each.value.host, var.defaults.host)
   ldap_groups_as_roles           = try(each.value.ldap_groups_as_roles, var.defaults.ldap_groups_as_roles, false)

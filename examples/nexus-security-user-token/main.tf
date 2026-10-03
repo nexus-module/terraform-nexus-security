@@ -11,6 +11,8 @@ provider "nexus" {
 module "nexus_security_user_token" {
   source = "../../modules/nexus-security-user-token"
 
-  enabled         = true
-  protect_content = false
+  enabled            = true
+  protect_content    = false
+  expiration_enabled = true
+  expiration_days    = 30
 }
